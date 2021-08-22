@@ -1,0 +1,157 @@
+{% extends 'partials/_master.twig' %}
+
+{% block main %}
+
+{% include "partials/_menu.twig" %}
+
+<!--début SWIPER-->
+{% include 'partials/_header_correze.twig' %}
+
+<!--fin swiper-->
+
+{% setcontent ateliers = "ateliers" where {'localisation': 'correze19'} %}
+
+{% setcontent ateliersinstit = "ateliers" where {'localisation': 'correze19'} %}
+<!--Types clientèle-->
+{% include 'partials/_public2.twig' %}
+<!--FIN Types clienteles-->
+<section class="actucarte">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                {% include "partials/agenda/_menu_agenda_dom_correze.twig" %}
+            </div>
+            <div class="col-sm-12 col-md-8 col-lg-8 col-xl-8">
+
+                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 borderImg ">
+                    
+                    <h2 class="titrebis"><i class="far fa-calendar-check fa-lg"></i> L'agenda en Corrèze | Séniors à
+                        domicile</h2>
+                    <blockquote>
+                        Tous nos ateliers en présentiel sont actuellement reportés.
+
+                        Nous vous invitons néanmoins à nous envoyer un message si vous êtes intéressé(e) par l'un
+                        d'entre eux afin que nous vous recontactions le moment venu.
+
+                        En attendant de nous retrouver, nous vous invitons à consulter la programmation de nos actions
+                        en ligne. Prenez soin de vous !
+                    </blockquote>
+                    <ul class="calendrier">
+                        {% for atelier in ateliers %}
+    {% if atelier.public == "Séniors à domicile" %}
+
+                        <li><img src="{{atelier.miniature}}"
+                                class="img-fluid domicile" alt="actions séniors à domicile"
+                                title="Séniors à domicile" />
+                            <span class="titreAction">{{atelier.titre}}</span>
+                            {% if atelier.complet %}
+                            <span class="dateAction"><i class="far fa-calendar-times"></i> {{atelier.date|date("d/m/Y ", "Europe/Paris")}}</span> <span
+                                class="horaireAction"><i class="far fa-clock"></i>{{atelier.heure}} <i
+                                    class="fas fa-hourglass-half"></i> {{atelier.duree}}</span> <span class="villeAction"><i
+                                    class="fas fa-map-signs"></i> {{atelier.ville}}</span>
+                                    <span class="supplementAction"><i class="fas fa-info-circle"></i>complet !</span>
+                            <div class="lienAction">
+                                <a href="{{atelier.lien }}"><i
+                                        class="fas fa-angle-double-right"></i> En savoir +</a>
+                                {% else %}
+                                <span class="dateAction"><i class="far fa-calendar-times"></i> {{atelier.date|date("d/m/Y ", "Europe/Paris")}}</span> <span
+                                class="horaireAction"><i class="far fa-clock"></i>{{atelier.heure}} <i
+                                    class="fas fa-hourglass-half"></i> {{atelier.duree}}</span> <span class="villeAction"><i
+                                    class="fas fa-map-signs"></i> {{atelier.ville}}</span>
+                            <div class="lienAction">
+                                <a href="{{atelier.lien }}"><i
+                                        class="fas fa-angle-double-right"></i> En savoir +</a>
+
+                                <a href="{{ config.get('general/lienF') }}"><i class="fas fa-angle-double-right"></i> Je
+                                    m'inscris</a>
+                            </div>
+                            {% endif %}
+                        
+                        </li>
+                        {% endif %}
+{% endfor %}
+                    </ul>
+                    
+                </div>
+
+            </div>
+
+
+          
+
+        </div>
+    </div>
+</section>
+
+<section class="clienteles institution">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+
+            {% include "partials/agenda/_menu_agenda_instit_correze.twig" %}
+
+            </div>
+            <div class="col-sm-12 col-md-8 col-lg-8 col-xl-8">
+
+                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 borderImg ">
+                
+                    <h2 class="titrebis"><i class="far fa-calendar-check fa-lg"></i> L'agenda en Corrèze | Séniors en
+                        institution</h2>
+                    <blockquote>
+                        Tous nos ateliers en présentiel sont actuellement reportés.
+
+                        Nous vous invitons néanmoins à nous envoyer un message si vous êtes intéressé(e) par l'un
+                        d'entre eux afin que nous vous recontactions le moment venu.
+
+                        En attendant de nous retrouver, nous vous invitons à consulter la programmation de nos actions
+                        en ligne. Prenez soin de vous !
+                    </blockquote>
+                    <ul class="calendrier">
+                        {% for atelier2 in ateliersinstit %}
+    {% if atelier2.public == "Séniors en institution" %}
+
+                        <li><img src="{{atelier2.miniature}}"
+                                class="img-fluid domicile" alt="actions séniors à domicile"
+                                title="Séniors à domicile" />
+                            <span class="titreAction">{{atelier2.nom}}</span>
+                            {% if atelier2.complet %}
+                            <span class="dateAction"><i class="far fa-calendar-times"></i> {{atelier2.date|date("d/m/Y ", "Europe/Paris")}}</span> <span
+                                class="horaireAction"><i class="far fa-clock"></i>{{atelier2.heure}} <i
+                                    class="fas fa-hourglass-half"></i> {{atelier2.duree}}</span> <span class="villeAction"><i
+                                    class="fas fa-map-signs"></i> {{atelier2.ville}}</span>
+                                    <span class="supplementAction"><i class="fas fa-info-circle"></i>complet !</span>
+                            <div class="lienAction">
+                                <a href="{{atelier2.lien }}"><i
+                                        class="fas fa-angle-double-right"></i> En savoir +</a>
+                                {% else %}
+                                <span class="dateAction"><i class="far fa-calendar-times"></i> {{atelier2.date|date("d/m/Y ", "Europe/Paris")}}</span> <span
+                                class="horaireAction"><i class="far fa-clock"></i>{{atelier2.heure}} <i
+                                    class="fas fa-hourglass-half"></i> {{atelier2.duree}}</span> <span class="villeAction"><i
+                                    class="fas fa-map-signs"></i> {{atelier2.ville}}</span>
+                            <div class="lienAction">
+                                <a href="{{atelier2.lien }}"><i
+                                        class="fas fa-angle-double-right"></i> En savoir +</a>
+
+                                <a href="{{ config.get('general/lienF') }}"><i class="fas fa-angle-double-right"></i> Je
+                                    m'inscris</a>
+                            </div>
+                            {% endif %}
+                        
+                        </li>
+                        {% endif %}
+{% endfor %}
+                    </ul>
+                </div>
+
+            </div>
+
+
+
+        </div>
+    </div>
+</section>
+
+<div class="clear"></div>
+<!--FOOTER-->
+
+{% endblock main %}

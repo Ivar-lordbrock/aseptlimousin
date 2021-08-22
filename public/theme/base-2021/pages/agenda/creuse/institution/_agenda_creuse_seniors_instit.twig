@@ -1,0 +1,152 @@
+{% extends 'partials/_master.twig' %}
+
+{% block main %}
+
+<nav id="menu" role="navigation" class="">   
+        <nav class="navbar navbar-inverse bg-inverse navbar-toggleable-md">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleCenteredNav" aria-controls="navbarsExampleCenteredNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
+      </button>
+<a  id="leLogo" class="nav-link leLogo" href="\">
+<img src="{{ asset('img/logo-association-sante-education-prevention-territoires-limousin.png' , 'theme') }}"
+ alt="Association santé éducation et prévention les territoires Limousin  87 Haute Vienne 19 corrèze 23 Creuse"
+  title="retour accueil"/></a>
+      <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExampleCenteredNav">
+       
+        <ul class="navbar-nav">
+         <li class="nav-item ">
+             <a class="nav-link" href="\"><i class="fa fa-home" aria-hidden="true"></i></a>
+          </li>
+           <li class="nav-item">
+            <a class="nav-link" href="/a-propos/presentation-de-l-asept-limousin">Qui sommes-nous</a>
+          </li> 
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle actions" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         Nos actions</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item " href="/page/actions-seniors-a-domicile">Séniors à domicile</a>
+          <a class="dropdown-item" href="/page/actions-seniors-en-institution">Séniors en institution</a>
+          
+           </div>
+      </li>
+      <!---->
+      <li class="nav-item dropdown mega-dropdown">
+                <a class="nav-link dropdown-toggle agenda active" href="javascript:;" id="navbarDropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Agendas</a>
+                <div class="dropdown-menu mega-menu v-2 row z-depth-1 special-color" aria-labelledby="navbarDropdownMenuLink1">
+                    <div class="row mx-md-4 mx-1">
+                        <div class="col-md-6 col-xl-4 sub-menu">
+                            <h6 class="sub-title text-uppercase font-weight-bold white-text"><i class="far fa-calendar-check"></i> Corrèze 19</h6>
+                            <ul class="caret-style pl-0">
+                                <li><a class="menu-item" href="/page/agenda-correze-seniors-a-domicile">Séniors à domicile 19</a></li>
+                                <li><a class="menu-item" href="/page/agenda-correze-seniors-en-institution">Séniors en institution 19</a></li> 
+                            </ul>
+                        </div>
+                       
+                        <div class="col-md-6 col-xl-4 sub-menu">
+                            <h6 class="sub-title text-uppercase font-weight-bold white-text"><i class="far fa-calendar-check"></i> Creuse 23</h6>
+                            <ul class="caret-style pl-0">
+                                <li><a class="menu-item" href="/page/agenda-creuse-seniors-a-domicile">Séniors à domicile 23</a></li>
+                                <li><a class="menu-item" href="/page/agenda-creuse-seniors-en-institution">Séniors en institution 23</a></li> 
+                            </ul>
+                        </div>
+                        <div class="col-md-6 col-xl-4 sub-menu">
+                            <h6 class="sub-title text-uppercase font-weight-bold white-text"><i class="far fa-calendar-check"></i> Haute Vienne 87</h6>
+                            <ul class="caret-style pl-0">
+                                <li><a class="menu-item" href="/page/agenda-haute-vienne-seniors-a-domicile">Séniors à domicile 87</a></li>
+                                <li><a class="menu-item" href="/page/agenda-haute-vienne-seniors-en-institution">Séniors en institution 87</a></li> 
+                            </ul>
+                        </div>                   
+                    </div>
+                </div>
+            </li>
+     
+            <li class="nav-item">
+             <a class="nav-link" href="/page/actualites">Actualités</a>
+          </li> 
+           <li class="nav-item">
+            <a class="nav-link" href="{{ config.get('general/lienContact') }}">Nous contacter</a>
+          </li>  
+			     
+  <li class="nav-item pictoRS"> <a href="https://www.youtube.com/channel/UCZbGAUzwyiEchlK37z6eLRw" target="_blank" title="Youtube"><i class="fab fa-youtube "></i></a></li>
+         <li class="nav-item pictoRS"> <a href="https://www.facebook.com/aseptlimousin/" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>   
+          </li>        
+        </ul>
+      </div>
+    </nav>
+       </nav>
+   <!------>
+   <div class="clearfix" ></div>
+{% include "partials/_header_agenda_23_instit.twig" %}
+
+{% setcontent ateliers = "ateliers" where {'localisation': 'creuse23'} %}
+<section class="clienteles institution">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+{% include "partials/agenda/_menu_agenda_instit_creuse.twig" %}
+ 
+            </div>
+            <div class="col-sm-12 col-md-8 col-lg-8 col-xl-8">
+
+                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 borderImg ">
+
+
+
+                    <h2 class="titrebis"><i class="far fa-calendar-check fa-lg"></i> L'agenda en Creuse | Séniors en institution</h2>
+                    {% if record.introduction == '' %}
+                   
+                    {% else %}
+                     <blockquote>
+                        {{record.introduction}}
+                    </blockquote>
+                    {% endif %}
+                    <ul class="calendrier">
+                   
+
+                   
+{% for atelier in ateliers %}
+    {% if atelier.public == "Séniors en institution" %}
+
+                        <li><img src=" {{atelier.miniature}}  "
+                                class="img-fluid domicile" alt="Séniors en institution"
+                                title="Séniors en institution" />
+                            <span class="titreAction">{{atelier.titre}}"</span>
+                            {% if atelier.complet %}
+                            <span class="dateAction"><i class="far fa-calendar-times"></i> {{atelier.date|date("d/m/Y ", "Europe/Paris")}}</span> <span
+                                class="horaireAction"><i class="far fa-clock"></i>{{atelier.heure}} <i
+                                    class="fas fa-hourglass-half"></i> {{atelier.duree}}</span> <span class="villeAction"><i
+                                    class="fas fa-map-signs"></i> {{atelier.ville}}</span>
+                                    <span class="supplementAction"><i class="fas fa-info-circle"></i>complet !</span>
+                            <div class="lienAction">
+                                <a href="{{atelier.lien}}"><i
+                                        class="fas fa-angle-double-right"></i> En savoir +</a>
+                                {% else %}
+                                <span class="dateAction"><i class="far fa-calendar-times"></i> {{atelier.date|date("d/m/Y ", "Europe/Paris")}}</span> <span
+                                class="horaireAction"><i class="far fa-clock"></i>{{atelier.heure}} <i
+                                    class="fas fa-hourglass-half"></i> {{atelier.duree}}</span> <span class="villeAction"><i
+                                    class="fas fa-map-signs"></i> {{atelier.ville}}</span>
+                            <div class="lienAction">
+                                <a href="{{atelier.lien}}"><i
+                                        class="fas fa-angle-double-right"></i> En savoir +</a>
+
+                                <a href="{{ config.get('general/lienFi') }}"><i class="fas fa-angle-double-right"></i> Je
+                                    m'inscris</a>
+                            </div>
+                            {% endif %}
+                        
+                        </li>
+                        {% endif %}
+{% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<div class="clear"></div>
+<!-------------------------------------FOOTER-------------------------------------->
+
+
+{% endblock main %}

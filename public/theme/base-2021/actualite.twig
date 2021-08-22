@@ -1,0 +1,100 @@
+{% extends 'partials/_master.twig' %}
+
+{% block main %}
+{% include 'partials/_menu.twig' %}
+
+<div class="clearfix"></div>
+
+<!-------------------------------------début SWIPER------------------------------------>
+<section class="transparent">
+    <div class="swiper-container" id="suite">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide slide3">
+                <div class="blocTexte">
+                    <h2 data-swiper-parallax="-400"><span>Actualités</span>
+                        Asept Limousin</h2>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="courbe"></div>
+
+</section>
+
+<!-------------------------------------fin swiper-------------------------------------->
+
+
+
+<section class="clienteles">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-8 col-lg-8 col-xl-8">
+                <div class="row">
+
+
+
+
+                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 borderImg ">
+                    {% if not record.image  %}
+ 
+                    {% else %}
+          <img src="{{record.image}}" class="img-fluid" alt="" />         
+{% endif %}
+                    <h2 class="titrebis">{{record.titre}}</h2>
+                       <p class="text-b">{{record.description}}</p> 
+{% if not record.lien %}
+
+{% else %}
+                        <p class="text-center"> <a href="{{record.lien}}"
+                                target="_blank" class="btn btn-lg btn-primary"><i class="fas fa-angle-double-right"></i>
+                                {{record.texte_bouton}}</a>
+                        </p>
+{% endif %}
+{% if not record.renseignement %}
+
+{% else %}
+                        <h3 class="titre text-center"> {{record.renseignement}}</h3>
+{% endif %}
+                        {% if not record.video  %}
+
+                        {% else %}
+                        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <div class="embed-responsive embed-responsive-16by9">
+              <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{record.video}}" allowfullscreen></iframe>
+            </div>
+          </div>
+
+                        
+                            {% endif %}
+                            {% if not record.documents %}
+
+                            {% else %}
+                            {% for doc in record.documents %}
+                            <p class="text-center" >
+                            <a href="{{doc}}" target="_blank" class="btn btn-lg btn-primary"><i
+                                    class="fas fa-file-download fa-lg"></i> Document</a></p>
+                            {% endfor %}
+                            {% endif %}
+
+                    </div>
+
+                    <hr>
+
+
+                </div>
+            </div>
+
+            <!--  Actu  -->
+
+            {% include 'partials/_actu1col.twig' %}
+        </div>
+    </div>
+</section>
+
+
+<div class="clear"></div>
+
+
+{% endblock main %}

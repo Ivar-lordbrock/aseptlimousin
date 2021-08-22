@@ -1,0 +1,257 @@
+{% extends 'partials/_master.twig' %}
+
+{% block main %}
+
+<nav id="menu" role="navigation" class="">   
+        <nav class="navbar navbar-inverse bg-inverse navbar-toggleable-md">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleCenteredNav" aria-controls="navbarsExampleCenteredNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
+      </button>
+<a  id="leLogo" class="nav-link leLogo" href="\">
+<img src="{{ asset('img/logo-association-sante-education-prevention-territoires-limousin.png' , 'theme') }}"
+ alt="Association santé éducation et prévention les territoires Limousin  87 Haute Vienne 19 corrèze 23 Creuse"
+  title="retour accueil"/></a>
+      <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExampleCenteredNav">
+       
+        <ul class="navbar-nav">
+         <li class="nav-item ">
+             <a class="nav-link" href="\"><i class="fa fa-home" aria-hidden="true"></i></a>
+          </li>
+           <li class="nav-item">
+            <a class="nav-link active" href="/a-propos/presentation-de-l-asept-limousin">Qui sommes-nous</a>
+          </li> 
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle actions" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         Nos actions</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/page/actions-seniors-a-domicile">Séniors à domicile</a>
+          <a class="dropdown-item" href="/page/actions-seniors-en-institution">Séniors en institution</a>
+          
+           </div>
+      </li>
+      <!---->
+      <li class="nav-item dropdown mega-dropdown">
+                <a class="nav-link dropdown-toggle agenda " href="javascript:;" id="navbarDropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Agendas</a>
+                <div class="dropdown-menu mega-menu v-2 row z-depth-1 special-color" aria-labelledby="navbarDropdownMenuLink1">
+                    <div class="row mx-md-4 mx-1">
+                        <div class="col-md-6 col-xl-4 sub-menu">
+                            <h6 class="sub-title text-uppercase font-weight-bold white-text"><i class="far fa-calendar-check"></i> Corrèze 19</h6>
+                            <ul class="caret-style pl-0">
+                                <li><a class="menu-item" href="/page/agenda-correze-seniors-a-domicile">Séniors à domicile 19</a></li>
+                                <li><a class="menu-item" href="/page/agenda-correze-seniors-en-institution">Séniors en institution 19</a></li> 
+                            </ul>
+                        </div>
+                       
+                        <div class="col-md-6 col-xl-4 sub-menu">
+                            <h6 class="sub-title text-uppercase font-weight-bold white-text"><i class="far fa-calendar-check"></i> Creuse 23</h6>
+                            <ul class="caret-style pl-0">
+                                <li><a class="menu-item" href="/page/agenda-creuse-seniors-a-domicile">Séniors à domicile 23</a></li>
+                                <li><a class="menu-item" href="/page/agenda-creuse-seniors-en-institution">Séniors en institution 23</a></li> 
+                            </ul>
+                        </div>
+                        <div class="col-md-6 col-xl-4 sub-menu">
+                            <h6 class="sub-title text-uppercase font-weight-bold white-text"><i class="far fa-calendar-check"></i> Haute Vienne 87</h6>
+                            <ul class="caret-style pl-0">
+                                <li><a class="menu-item" href="/page/agenda-haute-vienne-seniors-a-domicile">Séniors à domicile 87</a></li>
+                                <li><a class="menu-item" href="/page/agenda-haute-vienne-seniors-en-institution">Séniors en institution 87</a></li> 
+                            </ul>
+                        </div>                   
+                    </div>
+                </div>
+            </li>
+     
+            <li class="nav-item">
+             <a class="nav-link" href="/page/actualites">Actualités</a>
+          </li> 
+           <li class="nav-item">
+            <a class="nav-link" href="http://dev1.bernezac-communication.fr/contact.php">Nous contacter</a>
+          </li>  
+			     
+  <li class="nav-item pictoRS"> <a href="https://www.youtube.com/channel/UCZbGAUzwyiEchlK37z6eLRw" target="_blank" title="Youtube"><i class="fab fa-youtube "></i></a></li>
+         <li class="nav-item pictoRS"> <a href="https://www.facebook.com/aseptlimousin/" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>   
+          </li>        
+        </ul>
+      </div>
+    </nav>
+       </nav>
+   <!------>
+   <div class="clearfix" ></div>
+  
+
+<div class="clearfix"></div>
+
+<!-------------------------------------début SWIPER------------------------------------>
+<section class="transparent">
+    <div class="swiper-container" id="suite">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide slide3">
+                <div class="blocTexte">
+                    <h2 data-swiper-parallax="-400"><span>Qui sommes-nous </span>
+                        Association santé éducation et prévention sur les territoires en Limousin</h2>
+                    <!---
+           <p class="text-center"><a href="a-propos-de-l-asept.html" class="btn resa centrageitem1" style="text-shadow: none!important" >Qui sommes-nous ?</a></p>-->
+                </div>
+            </div>
+
+        </div>
+        <!--
+        <div class="swiper-pagination"></div>        
+        <div class="swiper-button-next swiper-button-white"></div>
+        <div class="swiper-button-prev swiper-button-white"></div>-->
+    </div>
+    <div class="courbe"></div>
+
+</section>
+
+<!-------------------------------------fin swiper-------------------------------------->
+
+<section class="actucarte">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-8 col-lg-8 col-xl-8">
+                <h2 class="titrebis">{{record.titre}}</h2>
+                <p class="text-justify colorBleuAAAA">
+                    {{record.introduction}}
+                </p>
+
+                <div id="accordion">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                            <div class="card-header" id="headingOne">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne"
+                                        aria-expanded="true" aria-controls="collapseOne">
+                                        <i class="fas fa-directions"></i> Missions
+                                    </button>
+                                </h5>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                            <div class="card-header" id="headingTwo">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link collapsed" data-toggle="collapse"
+                                        data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        <i class="fas fa-handshake"></i> Acteurs
+                                    </button>
+                                </h5>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                            <div class="card-header" id="headingThree">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link collapsed" data-toggle="collapse"
+                                        data-target="#collapseThree" aria-expanded="false"
+                                        aria-controls="collapseThree">
+                                        <i class="fas fa-users"></i> L'équipe
+                                    </button>
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!---------1 one-------------->
+                    <div class="card">
+
+
+                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                            data-parent="#accordion">
+                            <div class="card-body">
+                                {{record.mission}}
+                            </div>
+                        </div>
+                    </div>
+                    <!--2 two-->
+                    <div class="card">
+
+                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                            <div class="card-body">
+
+                                <ul class="nopuce1">
+                                    {{record.acteurs}}
+                                </ul>
+
+                                {{record.information}}
+
+                                <ul class="nopuce1">
+                                    {{record.partenaires}}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!------------3 three------>
+                    <div class="card">
+
+                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                            data-parent="#accordion">
+                            <div class="card-body">
+                                <h5>Une équipe à votre disposition pour vous renseigner :</h5>
+                                <div class="row annuaire">
+
+                                    {% set test = record.equipe %}
+                                    {% for equipe in test %}
+                                    <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                                        <ul>
+                                            <li>{{equipe.nom}}</li>
+                                            <li>{{equipe.poste}}</li>
+                                            <li><a href="mailto:{{equipe.mail}}">{{equipe.mail}}</a></li>
+                                        </ul>
+                                    </div>
+                                    {% endfor %}
+
+
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+            </div>
+            <!-- Actu -->
+            {% include 'partials/_actu1col.twig' %}
+        </div>
+    </div>
+</section>
+<!------------Types clientèle---->
+{% include 'partials/_public.twig' %}
+<!------------FIN Types clienteles---->
+<!------------agendas departements---->
+{% include 'partials/agenda/_double_agenda.twig' %}
+<!------------FIN agendas departements---->
+<!------------TVideos---->
+<section class="sectionvideos">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                <h2 class="titrebis">Quelques ateliers en vidéos</h2>
+            </div>
+ {% set videos = record.videos %}
+            {% for video in videos %}
+            <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4 height-fill">
+           
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{video.video}}"
+                        allowfullscreen></iframe>
+                </div>
+            
+            </div>
+            {% endfor %}
+        </div>
+
+
+    </div>
+</section>
+<!------------FIN videos---->
+
+<div class="clear"></div>
+{% endblock main %}

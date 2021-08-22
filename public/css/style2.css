@@ -1,0 +1,112 @@
+/* CSS : Huîtres David Hervé */
+/* Création Bernezac Communication */
+/* Auteur : Virgile Koch */
+
+* {margin : 0; padding : 0;}
+html { height: 100%;}
+body {width : 100%; height : 100%; postion : relative; background : #202020 }
+.wrapper {height : 100%; width : 100%;}
+h1, h2, h3, h4, h5 {font-family: 'Muro', sans-serif; color : #fff;}
+
+a {text-decoration :none; outline : none;}
+a, img {border : none;}
+p, li, td {font-family : calibri, arial, sans-serif; font-size : 11pt; color : #fff; line-height : 16pt; text-align : justify;}
+.main {float: left; margin-top : 100px; z-index : 1000; padding : 0 2%;}
+
+/* INDEX */
+.index h1#logo {width : 338px; height : 142px; text-indent : -9999px; margin : auto; padding : 10px 0;}
+.index h1#logo a {display : block; width : 338px; height : 142px; background : url(../images/logo.png) no-repeat;}
+
+
+
+/* PAGES */
+.pages #logo {width : 200px; height : 99px; text-indent : -9999px; position: absolute; left : 10px; top : 0px;}
+.pages #logo a {display : block; width : 200px; height : 99px; background : url(../images/logopage.png) no-repeat;}
+    /* MENU */
+    .pages #menu {width : 100%; height : 43px; padding-top : 30px;background : url(../images/menu.png) repeat-x bottom;}
+    .pages #menu ul {width : 760px; height : 43px; float:right; list-style-type : none;}
+    .pages #menu ul li {float: left; height : 43px; line-height : 45px; position : relative}
+    .pages #menu ul li a{display : block;height : 33px; padding : 0 10px; color : #fff; font-family : Muro; font-size : 12pt; }
+    .pages #menu ul li a:hover {color : #c2b49e}
+    .pages #menu .ssmenu {width : 228px; height : 273px; position : absolute; top : 43px; background : url(../images/ssmenu_gamme.png) no-repeat; display : none; padding-bottom : 30px;}
+    .pages #menu .ssmenu ul{width : 100px; float: right; margin : 7px 9px;}
+    .pages #menu .ssmenu ul li {float: none;height : 31px; line-height : 36px;padding : 0px; color : #fff; font-family : Muro; font-size : 12pt; border : 1px solid #fff; border-top : none; border-right:none;}
+    .pages #menu ul li:hover .ssmenu {display : block;}
+	
+	.pages #menu ul li.boutique {background:#fff;}
+    .pages #menu ul li.boutique a {color:#c2b49e}
+    
+    /* PRODUITS */
+    .produits div, .caracteristiques div{border : 1px solid #fff; padding : 10px}
+    #commande div{border : 1px solid #fff; padding : 5px}
+
+    .main h1 { width : 100%; font-size : 50pt; width : 100%; border-bottom : 1px solid #fff; text-align : center; margin-bottom : 10px;}
+    .main h2 { width : 100%; font-size : 26pt; width : 100%; border-bottom : 1px solid #fff; text-align : center; margin-bottom : 10px; color : #c2b49e}
+    .produits {padding : 5px; width : 500px; background : url(../images/content.png) repeat; margin-bottom : 20px;}
+    .produits a {font-weight : bold; text-decoration : underline; color : #fff}
+    .caracteristiques {float: left; padding : 5px; width : 200px; background : url(../images/content.png) repeat; margin-bottom : 100px;}
+    .caracteristiques p{float: left; width : 100%; text-align : center; display : block; color : #fff; font-family : muro; font-size : 26pt;}
+    .caracteristiques p {margin-bottom : 10px;}
+    .caracteristiques p span {display : block; font-size : 30pt;margin-bottom : 20px;}
+    .caracteristiques ul li a:hover {color : #c2b49e;}
+    
+    
+    
+    #commande {float: right; width : 150px; background : url(../images/content.png) repeat; padding : 5px}
+    #commande h3 {width : 100%; height : 20px; text-align : right;}
+    #commande h3 a{width : 100%; height : 20px; display : block; color : #000}
+    #commande h3 a:hover {color : #fff;}
+   
+
+    .images-pack{float:left; width:1000px;}
+		@media (max-width:1800px) {  .images-pack{float:left; width:600px;} }  
+    .images-pack ul{list-style: none; margin:0; padding:0;}
+    .images-pack ul li{display: inline-block; width: 18%; margin:1%;}
+    .images-pack ul li img{display: block; max-width: 100%; height: auto;}
+	
+	.pack .produits {float: left; margin-right: 200px;}
+    
+.footer {width : 100%; height : 30px; position : fixed; bottom : 0; z-index: 1000; background : url(../images/footer.jpg) repeat-x;}
+.footer ul {height : 30px; list-style-type : none;}
+.footer ul li {float: left; height : 30px; padding : 0 3px;}
+.footer ul li a{color : #fff; font-size : 7pt; text-transform : uppercase; height : 30px; display : bloc; line-height : 30px;}
+.footer ul li a:hover {color : #c2b49e;}
+
+/* Général */
+div.clear {clear : both; border: none; padding : 0;}
+.block {display : block; }
+.bold {font-weight :bold;}
+.black {color : #000; font-weight: bold;}
+
+#distributeurs, #poissonneries, #distri
+{background-color: #fff;
+border-radius: 10px 10px 10px 10px;
+box-shadow: 0 0 25px 5px #999;
+color: #111;
+display: none;
+width: 450px;
+padding: 25px;}
+#distrib h1 { font-size: 40px}
+
+#distributeurs h2, #distributeurs p , #poissonneries h2, #distri h2, #poissonneries p, #distri p{color : #202020;}
+#poissonneries h6, #distributeurs h6 {font-family: 'Muro', sans-serif; color : #716d64; font-size:14pt; font-weight:bold;}
+
+.button.b-close {border-radius: 7px 7px 7px 7px;
+box-shadow: none;
+font: bold 131% sans-serif;
+padding: 0 6px 2px;
+position: absolute;
+right: -7px;
+top: -7px;}
+
+.button {
+background-color: #494949;
+border-radius: 10px;
+box-shadow: 0 2px 3px rgba(0,0,0,0.3);
+color: #fff;
+cursor: pointer;
+display: inline-block;
+padding: 10px 20px;
+text-align: center;
+text-decoration: none;
+}

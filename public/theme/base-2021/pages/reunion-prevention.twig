@@ -1,0 +1,92 @@
+{% extends 'partials/_master.twig' %}
+
+{% block main %}
+{% include 'partials/_menu.twig' %}
+
+
+<!-------------------------------------début SWIPER------------------------------------>
+ {% include 'partials/_header_reunion.twig' %}
+      <!-------------------------------------fin swiper-------------------------------------->  
+
+<section class="clienteles">
+<div class="container">
+<div class="row">
+    	    <div class="col-sm-12 col-md-8 col-lg-8 col-xl-8">
+<div class="row">
+    	    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 borderImg ">
+    	    <div class="centervertical2">
+    	    <img src="{{record.image_entete}}" class="img-fluid" alt="Séniors à domicile Association santé éducation et prévention sur les territoires Limousin"/>
+	<h2 class="titre">{{record.titre_page}}</h2></div>
+	<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 presentation">			
+  {{record.description}}
+				</div>
+                {% if record.Infos is defined %}
+                
+                {% for info in record.Infos %}
+                <p>
+                    {% if info.titre_information_complementaire is defined %}
+                   
+                    {{info.titre_information_complementaire}}
+                    {% endif %}
+                    {{info.information_complementaire}}
+                </p>
+                {% endfor %}
+                {% endif %}
+
+                {% if record.Accordéon is defined %}
+                        {% for accordeon in record.Accordéon %}
+                        <div id="accordion">
+
+                            <div class="card">
+                                <div class="card-header" id="headingOne">
+                                    <h5 class="mb-0 dom">
+                                        <button class="btn btn-link" data-toggle="collapse"
+                                            data-target="#collapse{{ loop.index }}" aria-expanded="true"
+                                            aria-controls="collapseOne">
+                                            <i class="fas fa-angle-double-right"></i>
+                                            {{accordeon.titre_information_complementaire}}</button>
+                                    </h5>
+                                </div>
+                                <div id="collapse{{ loop.index }}" class="collapse showAAA" aria-labelledby="headingOne"
+                                    data-parent="#accordion">
+                                    <div class="card-body">
+
+                                        {{accordeon.information_complementaire}}
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        {% endfor %}
+                        {% endif %}
+			</div>
+				</div>
+				</div>
+				
+
+    	<!-- CALENDRIER -->  
+        {% setcontent atel = "ateliers" where {theme: '%Réunions de prévention%'} %}
+
+    	<div class="col-sm-12 col-md-6 col-lg-4 col-xl-4 calendrierColonneDomicile"> 
+  	   <h2 class="titrebis colorVert"><i class="far fa-calendar-check"></i> l'Agenda</h2>
+   	 {% include 'partials/calendrier/_calendrier_fiche_atelier_dom_correze.twig' %}
+          
+
+      
+    </div>  	 
+      	  </div>
+   </div>
+</section>
+    <section>
+   <!------------ Thematique 1 ligne ----> 
+{% include 'partials/_thematique_1row.twig' %}
+    
+     
+ <!------- carousel ------------>
+     {% include 'partials/_carouselfooter.twig' %}
+		  <div class="clear"></div>
+      
+      
+     
+      {% endblock main %}

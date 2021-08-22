@@ -1,0 +1,66 @@
+<ul class="calendrier">
+
+    {% for ate in atel %}
+    <li><img src="{{ate.miniature}}" class="img-fluid domicile" alt="actions séniors à domicile"
+            title="Séniors à domicile" />
+        <span class="titreAction">{{ate.titre}}</span>
+        {% if ate.complet %}
+        <span class="dateAction"><i class="far fa-calendar-times"></i>
+            {{ate.date|date("d/m/Y ", "Europe/Paris")}}</span> <span class="horaireAction"><i
+                class="far fa-clock"></i>{{ate.heure}} <i class="fas fa-hourglass-half"></i> {{ate.duree}}</span> <span
+            class="villeAction"><i class="fas fa-map-signs"></i> {{ate.ville}}
+
+            {% if ate.localisation == 'correze19' %}
+                                        (Corrèze 19)
+                                    {% endif %}
+
+            {% if ate.localisation == 'creuse23' %}
+                                        (Creuse 23)
+                                    {% endif %}
+            {% if ate.localisation == 'hautvienne87' %}
+                                        (Haute Vienne 87)
+                                    {% endif %}
+            {% if ate.localisation == 'dematerialise' %}
+                                        (Dématérialisé)
+                                    {% endif %}
+
+
+
+        </span>
+        <span class="supplementAction"><i class="fas fa-info-circle"></i>complet !</span>
+        <div class="lienAction">
+            <a href="{{ate.lien}}"><i class="fas fa-angle-double-right"></i> En savoir
+                +</a>
+            {% else %}
+            <span class="dateAction"><i class="far fa-calendar-times"></i> {{ate.date|date("d/m/Y ", "Europe/Paris")}}</span>
+            <span class="horaireAction"><i class="far fa-clock"></i>{{ate.heure}} <i class="fas fa-hourglass-half"></i>
+                {{ate.durée}}</span> <span class="villeAction"><i class="fas fa-map-signs"></i> {{ate.ville}}
+
+                 {% if ate.localisation == 'correze19' %}
+                                        (Corrèze 19)
+                                    {% endif %}
+
+            {% if ate.localisation == 'creuse23' %}
+                                       (Creuse 23)
+                                    {% endif %}
+            {% if ate.localisation == 'hautevienne87' %}
+                                        (Haute Vienne 87)
+                                    {% endif %}
+            {% if ate.localisation == 'dematerialise' %}
+                                        (Dématérialisé)
+                                    {% endif %}
+
+
+
+            </span>
+            <div class="lienAction">
+                <a href="{{ate.lien}}"><i class="fas fa-angle-double-right"></i> En
+                    savoir +</a>
+
+                <a href="{{ config.get('general/lienF') }}"><i class="fas fa-angle-double-right"></i> Je
+                    m'inscris</a>
+            </div>
+            {% endif %}
+    </li>
+    {% endfor %}
+</ul>

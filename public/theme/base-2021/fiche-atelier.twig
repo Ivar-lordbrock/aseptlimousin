@@ -1,0 +1,118 @@
+{% extends 'partials/_master.twig' %}
+
+{% block main %}
+
+{% include 'partials/_menu.twig' %}
+
+
+{% include ['partials/header/_' ~ record.nom ~ '.twig', 'partials/header/_default.twig'] %}
+
+<section class="actucarte">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-6 col-lg-8 col-xl-8">
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 borderImg ">
+                        <img src="{{record.image_entete}}" class="img-fluid"
+                            alt="actions en faveur des séniors à domicile Asept Limousin">
+                        <h2 class="titre">{{record.titre}}</h2>
+
+                        {{record.introduction}}
+                        <p></p>
+                         {% if record.description == ""%}
+
+                        {% else %}
+                        <ul class="nopuce1">
+                            {{ record.description}}
+                        </ul>
+                        {% endif %}
+
+                        {% if record.Infos is defined %}
+                        {% for info in record.Infos %}
+                        <p>
+                            {% if info.titre_information_complementaire is defined %}
+                            {{info.titre_information_complementaire}}
+                            {% endif %}
+                            {{info.information_complementaire}}
+                        </p>
+                        {% endfor %}
+                        {% endif %}
+
+                        {% if record.Accordéon is defined %}
+                        {% for accordeon in record.Accordéon %}
+                        <div id="accordion">
+
+                            <div class="card">
+                                <div class="card-header" id="headingOne">
+                                    <h5 class="mb-0 dom">
+                                        <button class="btn btn-link" data-toggle="collapse"
+                                            data-target="#collapse{{ loop.index }}" aria-expanded="true"
+                                            aria-controls="collapseOne">
+                                            <i class="fas fa-angle-double-right"></i>
+                                            {{accordeon.titre_information_complementaire}}</button>
+                                    </h5>
+                                </div>
+                                <div id="collapse{{ loop.index }}" class="collapse showAAA" aria-labelledby="headingOne"
+                                    data-parent="#accordion">
+                                    <div class="card-body">
+
+                                        {{accordeon.information_complementaire}}
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        {% endfor %}
+                        {% endif %}
+
+
+                        <!--VIDEO OPTIONNELLE-->
+                        {% if not record.Vidéo %}
+
+{% else %}
+
+                        <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{record.Vidéo}}"
+                        allowfullscreen></iframe>
+                </div>
+                            {% endif %}
+                          <div class="row">  <!--FIN VIDEO OPTIONNELLE-->
+
+
+
+                        </div>
+
+                        <!--fin collapse-->
+                        <p class="text-center">
+
+                            {% if record.Documents is defined %}
+                            {% for doc in record.Documents %}
+
+                            <a href="{{ doc}}" target="_blank" class="btn btn-lg btn-primary"><i
+                                    class="fas fa-file-download fa-lg"></i> Document</a>
+                            {% endfor %}
+                            {% endif %}
+                            <a href="{{record.URL_contact}}" class="btn btn-lg btn-primary"><i
+                                    class="fas fa-envelope fa-lg"></i> Demande de renseignements</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4 calendrierColonne">
+                <h2 class="titrebis colorVert"><i class="far fa-calendar-check"></i> l'Agenda</h2>
+
+
+
+{% set nomString = record.nom|join  %}
+                {% setcontent atel = "ateliers" where {nom: nomString}  %}
+
+                {% include 'partials/calendrier/_calendrier_fiche_atelier_dom_correze.twig' %}
+            </div>
+        </div>
+    </div>
+</section>
+
+{% include 'partials/_carouselfooter.twig' %}
+{% endblock main %}

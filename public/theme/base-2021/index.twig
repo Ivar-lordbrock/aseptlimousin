@@ -1,0 +1,34 @@
+{% extends 'partials/_master.twig' %}
+
+{% block main %}
+{% include 'partials/_menu.twig' %}
+{% if record.pop_up %}
+<div id="fond" onClick="MM_changeProp('fond','','display','none','DIV')">
+<div id="distri">
+  <div id="fermer" ><i class="fa fa-times fa-lg b-close"></i>
+FERMER</div>
+ <div id="contenupop">
+ <div style="width:100%;display:block;margin:10px auto 20px auto;position:relative;padding:0px 20px;">
+	 <h3 style="margin-bottom:10px;">{{record.titre_popup}}</h3>
+
+{{record.contenu_popup}}
+ <p class="text-center"><a href="{{record.document}}" target="_blank">
+  <img src="{{record.image_popup}}" class="img-fluid" alt="Asept limousin ateliers en ligne"/>
+</a></p>
+	</div>
+  
+
+</div>
+</div>
+<div class="clear"></div>
+</div>
+{% else %}
+
+
+{% endif %}
+{% include 'partials/_carousel.twig' %}
+  {% include 'partials/_actu3col.twig' %}
+ 
+  {% include 'partials/_public.twig' %}
+  {% include 'partials/_carouselfooter.twig' %}
+{% endblock main %}

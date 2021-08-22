@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="{{ htmllang() }}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  {# make sure we always display a proper title: The record's title if there is one, appended with the
+  sitename. If there is no title, we append the sitename with the payoff, if there is one. #}
+  <title>
+    {%- if record|default and record.title -%}
+    {{- record.title ~ ' | ' -}}
+    {%- endif -%}
+    {{- config.get('general/sitename') -}}
+    {%- if record|default == null and config.has('general/payoff') -%}
+    {{- ' | ' ~ config.get('general/payoff') -}}
+    {%- endif -%}
+  </title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+
+
+   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" rel="stylesheet"> 
+<link rel="stylesheet" href="{{ asset('css/bootstrap.min.css', 'theme') }}">
+<link rel="stylesheet" href="{{ asset('css/all.min.css' , 'theme') }}">
+  <link rel="stylesheet" href="{{ asset('css/swiper.min.css', 'theme') }}">
+  <link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css', 'theme') }}"> 
+  <link rel="stylesheet" href="{{ asset('css/owl.theme.default.min.css', 'theme') }}">
+  <link rel="stylesheet" href="{{ asset('css/main.css', 'theme') }}">
+  <link rel="icon" href="{{ asset('img/favicon.ico' , 'theme') }}" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,600" rel="stylesheet">
+  <link rel="stylesheet" href="{{ asset('css/animate.css' , 'theme') }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet">
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="{{ asset('css/bootstrap-reboot.min.css', 'theme') }}">
+  
+  <link rel="stylesheet" href="{{ asset('css/brands.min.css', 'theme') }}">
+  <link rel="stylesheet" href="{{ asset('css/component.css', 'theme') }}">
+  <link rel="stylesheet" href="{{ asset('css/contact-form.css', 'theme') }}">
+  <link rel="stylesheet" href="{{ asset('css/default.css', 'theme') }}">
+  <link rel="stylesheet" href="{{ asset('css/fontawesome.min.css', 'theme') }}">
+  
+  <link rel="stylesheet" href="{{ asset('css/normalize.css', 'theme') }}">
+  <link rel="stylesheet" href="{{ asset('css/jquery.fancybox.min.css', 'theme') }}">
+ 
+  
+  <link rel="stylesheet" href="{{ asset('css/owl.theme.green.min.css', 'theme') }}">
+  <link rel="stylesheet" href="{{ asset('css/regular.min.css', 'theme') }}">
+  
+  <meta name="description" content="Association santé éducation et prévention sur les territoires du Limousin  87 Haute Vienne 19 corrèze 23 Creuse">
+  
+  
+
+  <!--pop up-->
+<script type="text/javascript">
+function MM_changeProp(objId,x,theProp,theValue) { //v9.0
+  var obj = null; with (document){ if (getElementById)
+  obj = getElementById(objId); }
+  if (obj){
+    if (theValue == true || theValue == false)
+      eval("obj.style."+theProp+"="+theValue);
+    else eval("obj.style."+theProp+"='"+theValue+"'");
+  }
+}
+    </script>
+    <!--map hover-->
+<script type="text/javascript">
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+    </script>
+</head>
+
+<body id="haut"  name="haut" onLoad="MM_preloadImages('{{ asset('img/carte-Asept-limousin-87v.png' , 'theme') }}','{{ asset('img/carte-Asept-limousin-23v.png' , 'theme') }}','{{ asset('img/img/carte-Asept-limousin-19v.png' , 'theme') }}')">
+  <div class="main-content" id="content">
+
+
+
+
+
+  {% block main %}
+  
+  {% endblock main %}
+
+  {% include 'partials/_footer.twig' %}
+</div>
+
+  <script defer src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
+  
+</body>
+
+</html>

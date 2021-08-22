@@ -1,0 +1,21 @@
+{% setcontent actus = "actualites" %}
+<div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+
+
+                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                    <h2 class="titrebis colorVert"><i class="far fa-newspaper fa-lg"></i> Actualités et Revue de presse
+                    </h2>
+                    <ul class="coordonnees">
+{% for act in actus %}
+
+                        <li>{{act.titre}}
+                        <br>
+                            <a href="/actualites/{{act.slug}}"><i class="fas fa-angle-double-right"></i> En savoir plus</a>
+                        </li>
+                        <hr>
+{% endfor %}
+                    </ul>
+                    <p class="text-center"><a href="/page/actualites" class="btn btn-lg resa"><i
+                                class="fas fa-angle-double-right"></i> Voir toutes les actus</a></p>
+                </div>
+            </div>

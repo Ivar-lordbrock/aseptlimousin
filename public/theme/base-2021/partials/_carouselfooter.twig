@@ -1,0 +1,42 @@
+<section id="demos">
+  <div class="container">
+    <div class="large-12 columns">
+      <h2 class="titrebis text-center">Les ateliers Séniors ASEPT Limousin</h2>
+      <div class="owl-carousel owl-theme owl-loaded owl-drag">
+        <div class="owl-stage-outer">
+          <div class="owl-stage"
+            style="transform: translate3d(0px, 0px, 0px); transition: all 1.25s ease 0s; width: 2376px;">
+            {% setcontent atelier = 'fiche-atelier' %}
+
+            {% for ate in atelier %}
+            {% if ate.carousel %}
+            <div class="owl-item">
+              <div class="item">
+                            <a href="{{ate.lien_carousel}}">
+                  <img src="{{ate.miniature}}" /></a>
+                <p>{{ate.titre_atelier_carousel}}</p>
+              </div>
+            </div>
+            {% endif %}
+
+            {% endfor %}
+
+
+
+          </div>
+        </div>
+
+        
+      </div>
+
+    </div>
+
+  </div>
+
+
+</section>
+
+
+
+
+

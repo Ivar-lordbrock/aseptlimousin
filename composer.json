@@ -1,0 +1,53 @@
+{
+    "type": "project",
+    "license": "proprietary",
+    "require": {
+        "bobdenotter/configuration-notices": "^1.0",
+        "bobdenotter/weatherwidget": "^1.1",
+        "bolt/article": "^1.0",
+        "bolt/assets": "^4.1",
+        "bolt/core": "^4.1",
+        "bolt/newswidget": "^1.1",
+        "bolt/redactor": "^1.0",
+        "bolt/themes": "^3.3",
+        "symfony/flex": "^1.6",
+        "bolt/forms": "^1.4",
+        "twig/intl-extra": "^3.3",
+        "twig/extra-bundle": "^3.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "scripts": {
+        "auto-scripts": {
+            "cache:clear --no-warmup": "symfony-cmd",
+            "assets:install --symlink --relative %PUBLIC_DIR%": "symfony-cmd",
+            "bolt:copy-assets": "symfony-cmd"
+        },
+        "post-create-project-cmd": [
+            "php bin/post-create-project.php",
+            "php bin/console bolt:copy-themes"
+        ],
+        "post-install-cmd": [
+            "@auto-scripts",
+            "php bin/console extensions:configure --with-config",
+            "php bin/console bolt:info"
+        ],
+        "post-update-cmd": [
+            "@auto-scripts",
+            "php bin/console extensions:configure",
+            "php bin/console bolt:info"
+        ]
+    },
+    "extra": {
+        "symfony": {
+            "allow-contrib": true,
+            "require": "^5.1"
+        },
+        "public-dir": "public"
+    }
+}

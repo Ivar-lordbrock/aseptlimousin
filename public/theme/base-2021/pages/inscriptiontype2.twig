@@ -1,0 +1,57 @@
+{% extends 'partials/_master.twig' %}
+
+{% block main %}
+
+{% include 'partials/_menu.twig' %}
+
+   
+   <div class="clearfix" ></div>
+  
+<!-------------------------------------début SWIPER------------------------------------->
+ <section class="transparent">   
+    <div class="swiper-container" id="suite">
+        <div class="swiper-wrapper">  
+            <div class="swiper-slide slide3">
+              <div class="blocTexte">
+               <h2 data-swiper-parallax="-400"><span>Renseignements ou Inscription</span>
+Séniors à domicile en Limousin</h2><!---
+           <p class="text-center"><a href="a-propos-de-l-asept.html" class="btn resa centrageitem1" style="text-shadow: none!important" >Qui sommes-nous ?</a></p>--->         
+            </div>
+              </div>         
+           
+        </div>
+          <!---
+        <div class="swiper-pagination"></div>        
+        <div class="swiper-button-next swiper-button-white"></div>
+        <div class="swiper-button-prev swiper-button-white"></div>--->
+    </div>
+ <div class="courbe"></div>
+
+     </section> 
+               <!-------------------------------------fin swiper-------------------------------------->  
+
+
+    
+<section class="clienteles">
+<div class="container">
+<div class="row">
+    	    <div class="col-sm-12 col-md-8 col-lg-8 col-xl-8 ">
+    <h2 class="titrebis">Vous pouvez nous contacter via le formulaire ci-dessous <br>
+ou bien nous téléphoner au <a href="tel:0555498557" style="margin-left:10px"><i class="fas fa-phone-volume fa-2x"></i> 05 55 49 85 57</a></h2>
+
+<div class="row">
+ {{ boltforms('inscriptiontype2') }}
+	</div>
+
+	</div>
+				
+
+    	<!---->  
+    	{% include 'partials/_actudepart.twig' %} 	 
+      	  </div>
+   </div>
+</section>
+
+
+		  <div class="clear"></div>
+      {% endblock main %}

@@ -1,0 +1,78 @@
+{% extends 'partials/_master.twig' %}
+
+{% block main %}
+{% include 'partials/_menu.twig' %}
+
+
+
+        <!-------------------------------------début SWIPER------------------------------------>
+        {% include 'partials/_header_atelier_theme.twig' %}
+        <!-------------------------------------fin swiper-------------------------------------->
+
+        <section class="actucarte">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 col-md-8 col-lg-8 col-xl-8">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 borderImg ">
+                                <div class="centervertical2">
+                                    <img src="{{record.image_entete}}" class="img-fluid"
+                                        alt="Séniors à domicile Association santé éducation et prévention sur les territoires Limousin" />
+                                    <h2 class="titre">{{record.titre_page}}
+                                    </h2>
+                                </div>
+                                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 presentation">
+                                    {{record.introduction}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+<!--  Carte     -->
+                   {% include 'partials/_carte.twig' %}
+
+
+
+                </div>
+            </div>
+        </section>
+
+        
+        <section class="ateliers">
+            <div class="container">
+
+                <h2 class="titrebis text-center">Les ateliers Séniors ASEPT Limousin</h2>
+                <div class="row">
+
+                    {% setcontent atel = "fiche-atelier" where {theme: '%Ateliers thématiques%'} %}
+                    
+
+{% for ate in atel %}
+ {% if ate.Publics == "Séniors à domicile" %}
+                    <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                        <a href="/fiche-atelier/{{ate.slug}}">
+                            <img class="img-fluid" src="{{ate.miniature}}"
+                                alt="Asept Limousin Association santé éducation et prévention sur les territoires du Limousin  87 Haute Vienne 19 corrèze 23 Creuse" />
+                            <p>{{ate.titre_atelier_carousel}}</p>
+                        </a>
+                    </div>
+                    {% endif %}
+{% endfor %}
+                </div>
+            </div>
+        </section>
+
+        <!------------Types actions---->
+        {% include 'partials/_thematique_1row.twig' %}
+        <!------------FIN Types actions---->
+
+
+        <div class="clear"></div>
+        <!-------------------------------------FOOTER-------------------------------------->
+        
+
+       
+      
+      
+     
+      {% endblock main %}

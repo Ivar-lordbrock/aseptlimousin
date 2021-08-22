@@ -1,0 +1,92 @@
+{% extends 'partials/_master.twig' %}
+
+{% block main %}
+
+{% include "partials/_header_menu_active.twig" %}
+{% include "partials/_header_agenda_19.twig" %}
+
+{% setcontent ateliers = "ateliers" where {'localisation': 'correze19',nom:'atelier-preservons-nous'} %}
+<section class="actucarte">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+{% include "partials/agenda/_menu_agenda_dom_correze.twig" %}
+ 
+            </div>
+            <div class="col-sm-12 col-md-8 col-lg-8 col-xl-8">
+
+                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 borderImg ">
+
+
+
+                    <h2 class="titrebis"><i class="far fa-calendar-check fa-lg"></i> L'agenda en Corrèze | Séniors à
+                        domicile</h2>
+                     {% if record.introduction == '' %}
+                   
+                    {% else %}
+                     <blockquote>
+                        {{record.introduction}}
+                    </blockquote>
+                    {% endif %}
+                    <ul class="calendrier">
+                   
+
+                   
+{% for atelier in ateliers %}
+    {% if atelier.public == "Séniors à domicile" %}
+
+                        <li><img src=" {{atelier.miniature}}"
+                                class="img-fluid domicile" alt="actions séniors à domicile"
+                                title="Séniors à domicile" />
+                            <span class="titreAction">{{atelier.titre}}</span>
+                            {% if atelier.complet %}
+                            <span class="dateAction"><i class="far fa-calendar-times"></i> {{atelier.date|date("d/m/Y ", "Europe/Paris")}}</span> <span
+                                class="horaireAction"><i class="far fa-clock"></i>{{atelier.heure}} <i
+                                    class="fas fa-hourglass-half"></i> {{atelier.duree}}</span> <span class="villeAction"><i
+                                    class="fas fa-map-signs"></i> {{atelier.ville}}
+                                    
+                                    {% if atelier.localisation == 'correze19' %}
+                                        (Corrèze 19)
+                                    {% endif %}
+                                    
+                                    </span>
+                                    <span class="supplementAction"><i class="fas fa-info-circle"></i>complet !</span>
+                            <div class="lienAction">
+                                <a href="{{atelier.lien}}"><i
+                                        class="fas fa-angle-double-right"></i> En savoir +</a>
+                                {% else %}
+                                <span class="dateAction"><i class="far fa-calendar-times"></i> {{atelier.date|date("d/m/Y ", "Europe/Paris")}}</span> <span
+                                class="horaireAction"><i class="far fa-clock"></i>{{atelier.heure}} <i
+                                    class="fas fa-hourglass-half"></i> {{atelier.duree}}</span> <span class="villeAction"><i
+                                    class="fas fa-map-signs"></i> {{atelier.ville}}
+                                    
+                                    {% if atelier.localisation == 'correze19' %}
+                                        (Corrèze 19)
+                                    {% endif %}
+                                    </span>
+                            <div class="lienAction">
+                                <a href="{{atelier.lien}}"><i
+                                        class="fas fa-angle-double-right"></i> En savoir +</a>
+
+                                <a href="{{ config.get('general/lienF') }}"><i class="fas fa-angle-double-right"></i> Je
+                                    m'inscris</a>
+                            </div>
+                            {% endif %}
+                        
+                        </li>
+                        {% endif %}
+{% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-------carousel------------>
+ {% include "partials/_carouselfooter.twig" %} 
+<div class="clear"></div>
+<!-------------------------------------FOOTER-------------------------------------->
+
+
+{% endblock main %}
