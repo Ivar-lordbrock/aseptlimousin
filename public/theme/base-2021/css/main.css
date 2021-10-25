@@ -3397,6 +3397,13 @@ section.ateliers p {
     background-repeat: no-repeat;
 
 }
+.swiper-slide.slide32 {
+    background: url(../img/slides/slide-ateliers-yoga-du-rire-asept-limousin.jpg);
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+}
 
 /************situation******************/
 
@@ -3435,7 +3442,9 @@ section.ateliers p {
 .swiper-slide.slide28,
 .swiper-slide.slide29,
 .swiper-slide.slide30,
-.swiper-slide.slide31 {
+.swiper-slide.slide31,
+.swiper-slide.slide32
+ {
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -3503,7 +3512,8 @@ section.ateliers p {
 #nain .swiper-slide.slide28,
 #nain .swiper-slide.slide29,
 #nain .swiper-slide.slide30,
-#nain .swiper-slide.slide31 {
+#nain .swiper-slide.slide31,
+#nain .swiper-slide.slide32 {
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;

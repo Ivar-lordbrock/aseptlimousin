@@ -202,6 +202,7 @@ ateliers:
                     atelier-objectif-physique: Ateliers objectif physique et équilibre
                     atelier-nutri-activ: Ateliers Nutri Activ
                     atelier-memoire-pac: Ateliers mémoire PAC résidents
+                    atelier-yoga-du-rire: Ateliers Yoga du rire
         titre:
             type: text
         theme:
@@ -277,6 +278,8 @@ fiche-atelier:
                     atelier-objectif-physique: Ateliers objectif physique et équilibre
                     atelier-nutri-activ: Ateliers Nutri Activ
                     atelier-memoire-pac: Ateliers mémoire PAC résidents
+                    atelier-yoga-du-rire: Ateliers Yoga du rire
+
                 group: Général
             titre:
                 type: text
